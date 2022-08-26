@@ -37,14 +37,14 @@ ul {
   list-style: none;
 }
 
-button, input, textarea, select {
+button, .button-5, .button-4, .button-3, .button-2, .button-1, input, textarea, select {
   font: inherit;
   background: none;
   border: none;
   outline: none;
 }
 
-button {
+button, .button-5, .button-4, .button-3, .button-2, .button-1 {
   cursor: pointer;
 }
 
@@ -123,18 +123,38 @@ body {
   align-items: center;
 }
 
-.contenedor-test {
+.button {
   width: clamp(300px, 300px + 2vw, 600px);
-  font-size: clamp(1rem, 1rem + 10vw, 4rem);
   text-align: center;
   border-radius: 0.4em;
   transition: transform 200ms;
+  padding: 0.2em;
 }
-.contenedor-test:hover {
+.button:hover {
   transform: translate(2px, 2px);
 }
-.contenedor-test:active {
+.button:active {
   transform: translate(4px, 4px);
+}
+
+.button-1 {
+  font-size: 1rem;
+}
+
+.button-2 {
+  font-size: 2rem;
+}
+
+.button-3 {
+  font-size: 3rem;
+}
+
+.button-4 {
+  font-size: 4rem;
+}
+
+.button-5 {
+  font-size: 5rem;
 }
 
 /*# sourceMappingURL=index.css.map */
