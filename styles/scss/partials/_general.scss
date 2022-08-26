@@ -1,0 +1,61 @@
+/* variables */
+$color-primary: red;
+$color-secondary: blue;
+$color-third: orange;
+
+/* mapas */
+$colores: (primary: red, secondary: blue, third: orange);
+
+@each $nombre, $color in $colores{
+    .color-#{$nombre}{
+        color: $color;
+        background: invert($color);
+        text-shadow: 2px 2px 4px darken($color, 20%);
+    }
+}
+
+@for $i from 1 through 10{
+    .font-#{$i}{
+        font-size: 1rem * $i;
+    }
+}
+
+
+
+body{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-grid{
+    @include flex(column)
+}
+
+.contenedor-test {
+    width: clamp(300px, 300px + 2vw, 600px);
+    font-size: clamp(1rem, 1rem + 10vw, 4rem);
+    text-align: center;
+    border-radius: .4em;
+    transition: transform 200ms;
+
+    &:hover{
+        transform: translate(2px, 2px);
+    }
+    &:active{
+        transform: translate(4px, 4px);
+    }
+}
